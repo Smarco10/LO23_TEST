@@ -99,6 +99,14 @@ Voir toutes les branches:
 
 Créer une nouvelle branche (ne switch pas automatiquement):
 	pwd$> git br <branch_name>
+	pwd$> git push origin <branch_name>
+
+Lister les branches en ligne:
+	pwd$> git br -r
+
+Récupérer une branche créé:
+	pwd$> git checkout <origin/branch_name> //switch vers la branche en ligne en mode détaché
+	pwd$> git checkout -b <branch_name> //créé la branch en local
 
 Switcher de branche (change les fichiers, mais garde les modifs de chaques branches qui sont complètement indépendantes):
 	pwd$> git checkout <branch_name>
