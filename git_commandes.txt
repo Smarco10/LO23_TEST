@@ -99,6 +99,7 @@ Voir toutes les branches:
 
 Créer une nouvelle branche (ne switch pas automatiquement):
 	pwd$> git br <branch_name>
+	pwd$> git push origin <branch_name>
 
 Lister les branches en ligne:
 	pwd$> git br -r
