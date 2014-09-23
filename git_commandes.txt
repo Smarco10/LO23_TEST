@@ -1,0 +1,118 @@
+			### GIT ###
+
+Créer un nouveau projet en ligne de commande:
+	$> cd <project working dir>
+	pwd$> git init
+
+Cloner un dépôt existant
+	$> cd <upper project working dir>
+	upwd$> git clone <repo git address: http://XXX.git ou git://XXX.git ou ssh://XXX.git>
+
+Créer un dépôt-serveur: ajouter l’option « —-bare » au commandes ci-dessus (à exécuter sur le serveur) puis cloner sans l’option sur les autres machines
+
+		### APRES MODIFICATIONS ###
+
+Ajouter des nouveaux fichiers (inconnu à Git) à commiter:
+	pwd$> git add <file1_path> <file2_path> … <fileX_path>
+
+Lister les fichiers modifiés récemment:
+	pwd$> git status
+	ou
+	pwd$> git st //si st a été ajouté comme alias
+
+Afficher ce qui a changé partout ou sur un fichier précis):
+	pws$> git diff
+	ou
+	pws$> git df
+	ou
+	pwd$> git df <file_path>
+
+Envoyer un commit (utiliser l’option « -a » pour commiter tout les fichiers listés par status ou lister manuellement les fichiers à commiter):
+	pwd$> git commit
+	ou
+	pwd$> git ci
+A la suite du commit, un éditeur de texte s’ouvre et sur la première ligne écrire à quoi correspondent les changements (sur le reste, on peut détailler)
+
+Méthode de travail:
+	1. Modifier le code source (en local)
+	2. Tester le programme avec les modifications
+	(3.0. Obtenir le statu des modifications faites)
+	(3.0.1 Afficher ce qui a changé)
+	(3.1. Ajouter les fichiers à commiter)
+	3. Faire un commit pour « enregistrer » les changements auprès de Git (1 commit/modification globale (1 bug, ajout d’UNE class, etc.))
+	4. Reprendre à l’étape 1. si besoin
+
+		### SUITE A UNE ERREUR ###
+
+Afficher les logs (option « -p » pour avoir le détail des lignes modifiées ou option « —-stat » pour avoir un résumé):
+	pwd$> git log
+
+Modifier le dernier message de commit (avant transfert):
+	pwd$> git ci —amend
+
+Revenir au commit <key_word> (les fichiers restent modifiés, utiliser l’option « —-hard » pour faire revenir les fichiers aussi):
+	pwd$> git reset <key_word>
+
+	<key_word>: 	HEAD <=> le dernier commit (annule le « git add »)
+			HEAD^ <=> l’avant dernier commit
+			HEAD^^ <=> avant-avant dernier commit
+			HEAD~2 <=> HEAD^^
+			<commit_id> ou le début de <commit_id> jusqu’à plus d’ambiguité
+
+Faire revenir un fichier comme au dernier commit (non-envoyé):
+	pwd$> git checkout <file_path>
+
+
+		### ENVOYER ET PARTAGER ###
+
+Télécharger et fusionner les nouveautés:
+	pwd$> git pull
+	ou
+	pwd$> git pl 
+
+Pull est une composition de fonctions « fetch » (télécharge les modifications) et « merge » (fusionne les modifications téléchargées)
+
+Envoyer les données (/!\ on ne peut plus revenir facilement en arrière et toujours faire un pull avant un push car le serveur ne gère pas les conflits, ne faire un push qu’une fois par jour au contraire des commits):
+	pwd$> git push
+	ou
+	pwd$> git ps
+
+Annuler un commit erroné, envoyé: faire un commit qui fait l’inverse de ce que vous avez envoyé:
+	pwd$> git log //pour avoir le num du commit et les erreurs
+	pwd$> git revert <commit_id> //créé un commit inverse à pusher
+
+		### LES BRANCHES ###
+
+Par défaut tous dans MASTER
+Les branches servent à « dupliquer » le projet pour tester une nouvelle fonctionnalité (ou modifications qui prennent du temps)
+
+Condition pour créer un branche:
+	Modification qui vas prendre du temps
+	Modification qui vas devoir se faire en plusieurs commits
+	Modification complexe
+	Modification expérimentale
+
+Voir toutes les branches:
+	pwd$> git branch
+	ou 
+	pwd$> git br
+
+Créer une nouvelle branche (ne switch pas automatiquement):
+	pwd$> git br <branch_name>
+
+Switcher de branche (change les fichiers, mais garde les modifs de chaques branches qui sont complètement indépendantes):
+	pwd$> git checkout <branch_name>
+
+Fusionner les branches (fusionne <branch_name> dans la branche courante, se placer, au préalable, dans la branche de destination avec un checkout):
+	pwd$> git merge <branch_name>
+
+Supprimer une branche fusionnée (-D force la suppression et perd tous les changements):
+	pwd$> git branch -d <branch_name>
+
+		
+
+
+
+
+
+
