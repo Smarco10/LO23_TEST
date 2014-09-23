@@ -1,5 +1,7 @@
 			### GIT ###
 
+Site: http://fr.openclassrooms.com/informatique/cours/gerez-vos-codes-source-avec-git
+
 Créer un nouveau projet en ligne de commande:
 	$> cd <project working dir>
 	pwd$> git init
