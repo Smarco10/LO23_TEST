@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int main(){
-	print(" :-)");
+	print(" ");kkk
  print("Hi IHM team!");
  return 0;
 }
