@@ -107,8 +107,9 @@ Lister les branches en ligne:
 	pwd$> git br -r
 
 Récupérer une branche créé:
-	pwd$> git checkout <origin/branch_name> //switch vers la branche en ligne en mode détaché
-	pwd$> git checkout -b <branch_name> //créé la branch en local
+	pwd$> git checkout -b <branch_name> <origin/branch_name> //créé la branch en local
+	ou
+	pwd$> git branch --track <origin/branch_name>
 
 Switcher de branche (change les fichiers, mais garde les modifs de chaques branches qui sont complètement indépendantes):
 	pwd$> git checkout <branch_name>
@@ -119,6 +120,13 @@ Fusionner les branches (fusionne <branch_name> dans la branche courante, se plac
 Supprimer une branche fusionnée (-D force la suppression et perd tous les changements):
 	pwd$> git branch -d <branch_name>
 
+Supprimer une branche distance
+	pwd$> git branch -r -d <origin/branch_name>
+	ou
+	pwd$> git push <origin:branch_name>
+
+Rebaser
+	TODO: Voir a quoi sa sert?!?
 		
 
 
