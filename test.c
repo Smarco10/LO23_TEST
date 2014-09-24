@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-	//cool
+	//ceci est dans marco
 	//ceci est un ajout
 	printf(stdout, "HelloWorld");
 	//ceci est cool
